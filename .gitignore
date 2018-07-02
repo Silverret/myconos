@@ -1,5 +1,9 @@
 # data
 data/
+media/
+
+# Static file
+web/static/
 
 # jupyter Notebook
 *.ipynb

@@ -1,0 +1,15 @@
+{% extends 'web/index.html' %} 
+
+{% block main %}
+<h5>Only Mycobacterium Smegmatis segmentation is available (and not perfect). 
+    We are working on improving our results on more different cells. </h5>
+
+<h4>Please upload our image/movie you want us to process.</h4>
+<h6>Supported format : .tif, .png, .jpg</h6>
+<form class="form-signin" id="login_form" action="/web/" method="post" enctype="multipart/form-data">{% csrf_token %}
+    <br> {{ form.as_p }}
+    <br>
+    <button class="btn btn-lg btn-outline-primary" type="submit">Upload and process</button>
+</form>
+
+{% endblock %}

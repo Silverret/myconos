@@ -17,16 +17,20 @@ def get_images_from_tif(file):
         images_list.append(np.array(multi_img))
     return images_list
 
-def get_rois(markers):
+def get_rois_from_markers(markers, frame_position=0):
     """
     #TODO
     """
-    rois = {}
+    rois = []
     for k in range(markers.max()):
         mask = np.uint8(np.where(markers==k+1,1,0))
-        _,cnt,_ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
-        cnt = np.squeeze(cnt[0])
-        rois[k+1] = cnt.tolist()
+        _,cnt,_ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        cnt = np.reshape(cnt[0], (-1,2))
+        y_coords = cnt[:,0]
+        x_coords = cnt[:,1]
+        from api.utils.roi import ROIShape
+        roi = ROIShape(x_coords, y_coords, "roi-{:04d}-{:04d}".format(frame_position, k), frame_position)
+        rois.append(roi)
     return rois
         
 

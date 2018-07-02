@@ -1,0 +1,21 @@
+{% extends 'web/base.html' %} {% block content %}
+{% load static %}
+<section class="py-5 text-center bg-gradient">
+    <div class="container">
+        <h1>Welcome at Myconos</h1>
+        <p class="lead text-muted">
+                an cell segmentation open-source project, created to help researchers working on Mycobacterium cells.
+        </p>
+        <p>
+            <a href="{% url 'web:index' %}" class="btn btn-primary my-2">Upload a new image !</a>
+            <a href="#" class="btn btn-secondary my-2">Donate now !</a>
+        </p>
+    </div>
+</section>
+
+<div class="py-5 bg-light text-center" id="main">
+    <div class="container">
+            {% block main %} {% endblock %}
+    </div>
+</div>
+{% endblock %}

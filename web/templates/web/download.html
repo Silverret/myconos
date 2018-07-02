@@ -1,0 +1,10 @@
+{% extends 'web/index.html' %} {% block main %}
+
+<h4>Ok, the processing is finally done. You can download the result now !</h5>
+<h5>The result is an ZIP archive with all the cells we manage to identify as ImageJ ROI file. 
+    Open your image/movie with ImageJ. 
+    Then open the archive with the ROI manager (Analyse/Tool/ROI Manger) !</h5>
+
+<a class="btn btn-lg btn-outline-primary" role="button" href="{% url 'web:download' output_path %}">Download</a>
+
+{% endblock %}
