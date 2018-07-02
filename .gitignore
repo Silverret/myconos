@@ -8,7 +8,7 @@ media/output/**
 !media/output/init.txt
 
 # Static file
-web/static/bootstrap
+web/static/
 
 # jupyter Notebook
 *.ipynb
