@@ -1,10 +1,13 @@
 # data
 data/
-media/input/*.*
-media/output/*.*
+
+# media
+media/**
+!media/**/init.txt
 
 # Static file
-web/static/
+web/static/**
+!web/static/web
 
 # jupyter Notebook
 *.ipynb
