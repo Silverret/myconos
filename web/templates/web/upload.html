@@ -6,7 +6,7 @@
 
 <h4>Please upload our image/movie you want us to process.</h4>
 <h6>Supported format : .tif, .png, .jpg</h6>
-<form class="form-signin" id="login_form" action="/web/" method="post" enctype="multipart/form-data">{% csrf_token %}
+<form class="form-signin" id="login_form" action="{% url 'web:index' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
     <br> {{ form.as_p }}
     <br>
     <button class="btn btn-lg btn-outline-primary" type="submit">Upload and process</button>
