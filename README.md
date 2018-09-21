@@ -8,4 +8,4 @@ Welcome to my awesome project.
 
 This Open-Source project try to help biologists around the world to process their mycobacterium images
 
-If you read the code and see a way to improve it, please let me know (with github's Issues sytem). 
+If you read the code and see a way to improve it, please let me know (with github's Issues system). 
